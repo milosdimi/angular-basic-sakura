@@ -1,0 +1,45 @@
+section {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../assets/img/ramenBG.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35); // leichtes Dimmen
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    z-index: 0;
+  }
+
+  h1, h2 {
+    position: relative;
+    z-index: 1; // über dem Overlay
+    color: white;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 4rem;
+    letter-spacing: 4px;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    opacity: 0.85;
+  }
+}
