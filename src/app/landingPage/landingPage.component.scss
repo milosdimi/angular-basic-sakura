@@ -19,8 +19,7 @@ section {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.35); // leichtes Dimmen
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
+
     z-index: 0;
   }
 
@@ -41,5 +40,9 @@ section {
     font-size: 1.6rem;
     margin-top: 10px;
     opacity: 0.85;
+  }
+
+  div {
+    width: 100%;
   }
 }
