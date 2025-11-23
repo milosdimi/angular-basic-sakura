@@ -7,8 +7,8 @@ import { FindUsComponent } from './find-us/find-us.component';
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [landingPageComponent, OurMenuComponent, HowToOrderComponent, FindUsComponent],
+  imports: [landingPageComponent, HowToOrderComponent, OurMenuComponent, FindUsComponent],
   templateUrl: './main-content.component.html',
-  styleUrl: './main-content.component.scss',
+  styleUrls: ['./main-content.component.scss'],
 })
 export class MainContentComponent {}
