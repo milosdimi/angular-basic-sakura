@@ -1,0 +1,115 @@
+.findus-container {
+  width: 100%;
+  padding: 120px 0 80px;
+  text-align: center;
+  background: white;
+  position: relative;
+
+  h2 {
+    font-size: 2.6rem;
+    color: #c94b3d;
+    margin-bottom: 40px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      background: linear-gradient(90deg, transparent, #ff7043, transparent);
+      border-radius: 999px;
+    }
+  }
+
+  /* Address Line */
+  .address-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+
+  /* 3 Info Boxes */
+  .info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 22px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      min-width: 220px;
+
+      h3 {
+        margin-bottom: 10px;
+        color: #c94b3d;
+        font-size: 1.3rem;
+      }
+
+      p {
+        margin: 4px 0;
+        font-size: 1rem;
+
+        a {
+          text-decoration: none;
+          color: #333;
+          font-weight: 600;
+
+          &:hover {
+            color: #ff7043;
+          }
+        }
+      }
+    }
+
+    /* CTA Button */
+    .map-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ff7043;
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: #f95826;
+      }
+    }
+  }
+
+  /* MAP */
+  .map-wrapper {
+    margin: 0 auto;
+    width: min(100%, 900px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+    iframe {
+      border: 0;
+      width: 100%;
+    }
+  }
+}
