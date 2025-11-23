@@ -9,7 +9,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
     template: `
     <section>
       <div><app-navbar></app-navbar></div>
-      <h1 class="fontCherryCreamSodaRegular">SAKURA RAMEN</h1>
+      <h1 class="fontCherryCreamSodaRegular">SAKURA RAMEN TEST</h1>
       <h2 class="fontCherryCreamSodaRegular">Authentic Japanese RAMEN</h2>
     </section>
     `,
