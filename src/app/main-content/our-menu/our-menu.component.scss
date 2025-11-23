@@ -1,0 +1,129 @@
+.menu-container {
+  width: 100%;
+  padding: 100px 0 140px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  /* Papirus Background */
+  background-image: url("./../../../assets/img/papirusBG3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #c94b3d;
+    margin-bottom: 90px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -12px;
+      background: linear-gradient(90deg, transparent, #ff7043, transparent);
+      border-radius: 999px;
+    }
+  }
+
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    align-items: center;
+  }
+
+  .menu-item {
+    width: min(1100px, 100%);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .ramen-img {
+      width: 260px;
+      height: 260px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.08) rotate(-1deg);
+      }
+    }
+
+    .info {
+      width: 320px;
+      text-align: left;
+
+      h3 {
+        margin: 0 0 14px;
+        font-size: 1.4rem;
+        color: #c94b3d;
+        letter-spacing: 1px;
+      }
+
+      .prices {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 1rem;
+        color: #2e2e2e;
+
+        .row {
+          display: flex;
+          justify-content: space-between;
+          gap: 18px;
+          padding-bottom: 6px;
+          border-bottom: 1px dashed rgba(0, 0, 0, 0.15);
+
+          span:first-child {
+            font-weight: 600;
+          }
+
+          span:last-child {
+            font-weight: 700;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .menu-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 24px;
+
+      &:nth-child(even) {
+        flex-direction: column;
+      }
+
+      .info {
+        width: 100%;
+        text-align: center;
+
+        .prices .row {
+          max-width: 420px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
