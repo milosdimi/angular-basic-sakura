@@ -1,6 +1,6 @@
 .hto-container {
   width: 100%;
-  padding: 80px 0;
+  padding: 80px 20px;  // <- vorher 80px 0, jetzt bisschen Luft links/rechts
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -12,7 +12,6 @@
     #fff2ea 100%
   );
 
-  /* Subtle Noise Texture */
   &::before {
     content: "";
     position: absolute;
@@ -22,7 +21,6 @@
     pointer-events: none;
   }
 
-  /* Background Blobs */
   &::after {
     content: "";
     position: absolute;
@@ -48,7 +46,6 @@
     z-index: 0;
   }
 
-  /* Title */
   h2 {
     font-size: 2.6rem;
     font-weight: 700;
@@ -61,7 +58,6 @@
     display: inline-block;
     z-index: 1;
 
-    /* Decorative underline */
     &::after {
       content: "";
       position: absolute;
@@ -75,28 +71,29 @@
     }
   }
 
-  /* Steps Container */
   .steps {
     display: flex;
     justify-content: center;
-    gap: 120px;
-    padding: 0 40px;
+    align-items: center;          // <- neu: gleiche Höhe / sauber mittig
+    gap: clamp(32px, 8vw, 120px); // <- neu: gap skaliert automatisch
+    padding: 0 10px;
     position: relative;
     z-index: 2;
+
+    max-width: 1000px;           // <- neu: Section wirkt kompakter
+    margin: 0 auto;              // <- neu: garantiert mittig
 
     @media (max-width: 768px) {
       flex-direction: column;
       gap: 40px;
     }
 
-    /* Each Step Card */
     .step {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 180px;
 
-      /* Glassmorphism Step Card Look */
       background: rgba(255, 255, 255, 0.7);
       border: 1px solid rgba(255, 112, 67, 0.25);
       border-radius: 18px;
@@ -113,7 +110,6 @@
         border-color: rgba(255, 112, 67, 0.55);
       }
 
-      /* Icon */
       img {
         width: 90px;
         height: auto;
@@ -125,7 +121,6 @@
         }
       }
 
-      /* Step Label */
       p {
         margin: 0;
         font-family: "Cherry Cream Soda", cursive;

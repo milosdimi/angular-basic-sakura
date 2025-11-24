@@ -1,9 +1,32 @@
 .imprint-container {
   width: 100%;
-  padding: 120px 20px;
+  padding: 120px 20px 80px;
   max-width: 900px;
   margin: 0 auto;
   text-align: left;
+  position: relative; // wichtig fürs absolute Logo
+
+  /* Mini-Logo oben links */
+  .mini-logo {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: inline-flex;
+    z-index: 2;
+
+    img {
+      width: 52px;
+      height: 52px;
+      opacity: 0.9;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    &:hover img {
+      opacity: 1;
+      transform: scale(1.06);
+    }
+  }
 
   h2 {
     text-align: center;
@@ -35,6 +58,7 @@
       margin-bottom: 8px;
       color: #c94b3d;
       font-size: 1.3rem;
+      font-family: "Cherry Cream Soda", cursive;
     }
 
     a {
@@ -46,9 +70,10 @@
       }
     }
   }
+
   .back-home-btn {
     display: inline-block;
-    margin: 20px auto 40px;
+    margin: 28px auto 0;
     padding: 10px 20px;
     background: #ff7043;
     color: white;
@@ -61,6 +86,25 @@
     &:hover {
       background: #f95826;
       transform: translateY(-2px);
+    }
+  }
+
+  /* Mobile Feinschliff */
+  @media (max-width: 600px) {
+    padding-top: 110px;
+
+    .mini-logo {
+      top: 18px;
+      left: 18px;
+
+      img {
+        width: 46px;
+        height: 46px;
+      }
+    }
+
+    h2 {
+      font-size: 2.2rem;
     }
   }
 }
