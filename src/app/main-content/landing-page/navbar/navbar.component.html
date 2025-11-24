@@ -1,15 +1,24 @@
 <nav>
-    <a class="logo" routerLink="/">
-        <img src="assets/img/sakura_logo.png" alt="sakura_logo">
+    <!-- Logo -->
+    <a class="logo" routerLink="/" (click)="closeMenu()">
+        <img src="assets/img/sakura_logo.png" alt="sakura_logo" />
     </a>
 
-    <div class="nav-links">
-        <a routerLink="/" fragment="menu">MENU</a>
-        <a routerLink="/" fragment="findus">LOCATIONS</a>
-        <a routerLink="/" fragment="hto">ABOUT</a>
+    <!-- Burger Button -->
+    <button class="burger" [class.open]="menuOpen" (click)="toggleMenu()" aria-label="Toggle navigation" title="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-        <a class="phone_btn" href="tel:+436641234567">
-            <img src="assets/img/telephone.png" alt="Phone Icon">
+    <!-- EIN Menüblock für Desktop + Mobile -->
+    <div class="nav-links" [class.open]="menuOpen">
+        <a routerLink="/" fragment="menu" (click)="closeMenu()">MENU</a>
+        <a routerLink="/" fragment="findus" (click)="closeMenu()">LOCATIONS</a>
+        <a routerLink="/" fragment="hto" (click)="closeMenu()">ABOUT</a>
+
+        <a class="phone_btn" href="tel:+436641234567" (click)="closeMenu()">
+            <img src="assets/img/telephone.png" alt="Phone Icon" />
             <span>0664 1234567</span>
         </a>
     </div>

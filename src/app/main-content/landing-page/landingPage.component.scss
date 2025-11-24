@@ -1,6 +1,8 @@
 section {
-  height: 100vh;
+  /* wichtig für Mobile: statt 100vh lieber svh */
+  min-height: 100svh;
   width: 100%;
+
   background-image: url("./../../../assets/img/ramenBG.jpg");
   background-size: cover;
   background-position: 50% 50%;
@@ -11,38 +13,56 @@ section {
   justify-content: center;
   align-items: center;
 
-
   position: relative;
+  text-align: center;
+  padding: 0 20px; /* damit Text nie am Rand klebt */
 
+  /* dunkles Overlay */
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35); // leichtes Dimmen
-
+    background: rgba(0, 0, 0, 0.35);
     z-index: 0;
   }
 
-  h1, h2 {
+  /* alles über dem Overlay */
+  h1,
+  h2 {
     position: relative;
-    z-index: 1; // über dem Overlay
+    z-index: 1;
     color: white;
-    text-align: center;
+    margin: 0;
   }
 
   h1 {
-    font-size: 4rem;
-    letter-spacing: 4px;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    letter-spacing: clamp(2px, 0.8vw, 4px);
     font-weight: 700;
+    line-height: 1.1;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   }
 
   h2 {
-    font-size: 1.6rem;
-    margin-top: 10px;
-    opacity: 0.85;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    margin-top: 12px;
+    opacity: 0.9;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   }
 
-  div {
+  /* Navbar-Wrapper */
+  .nav-wrapper {
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* über Overlay & Text */
+  }
+}
+
+/* optional: bisschen mehr "luft" auf sehr kleinen Geräten */
+@media (max-width: 480px) {
+  section {
+    padding-top: 20px; /* falls Navbar sehr nah ist */
   }
 }
